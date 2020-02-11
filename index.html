@@ -18,8 +18,8 @@
       <div class="col-12">
 
         <div class="tab">
-          <button class="tablinks" onclick="app.openCity(event, 'cars')">See Cars</button>
-          <button class="tablinks" onclick="app.openCity(event, 'houses')">See Houses</button>
+          <button class="tablinks" onclick="app.openCategory(event, 'cars')">See Cars</button>
+          <button class="tablinks" onclick="app.openCategory(event, 'houses')">See Houses</button>
         </div>
 
         <!-- Tab content -->
@@ -33,9 +33,7 @@
     <div class="row">
       <div class="col-4">
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#car-form">
-          Add Car
-        </button>
+
 
         <!-- Modal -->
         <div class="modal fade" id="car-form" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
@@ -90,8 +88,6 @@
         </div>
       </div>
     </div>
-    <div class="row" id=" was cars"></div>
-    <div class="row" id=" was houses"></div>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

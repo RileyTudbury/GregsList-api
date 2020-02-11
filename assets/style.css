@@ -1,3 +1,22 @@
+.card{
+  width: auto;
+  height: 55vh;
+}
+
+body{
+  background-color: black;
+}
+
+.btn-block{
+  height: 8vh;
+}
+
+.card-img-top{
+  height: 27vh;
+  width: auto;
+}
+
+
 /* Style the tab */
 .tab {
   overflow: hidden;

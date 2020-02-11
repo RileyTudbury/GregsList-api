@@ -5,7 +5,9 @@ import store from "../store.js";
 function _draw() {
   let cars = store.State.cars;
   let carsElem = document.getElementById("cars");
-  let template = "";
+  let template = `<div class="col-12"><button type="button" class="py-3 btn btn-secondary btn-block" data-toggle="modal" data-target="#car-form">
+  Add Car
+</button></div>`;
 
   cars.forEach(car => {
     template += car.Template;

@@ -5,7 +5,7 @@ class App {
   housesController = new HousesController();
   carsController = new CarsController();
 
-  openCity(evt, cityName) {
+  openCategory(evt, cityName) {
     // Declare all variables
     let i, tabcontent, tablinks;
 

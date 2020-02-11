@@ -15,7 +15,7 @@ export default class House {
 
     return `
               <div class="col-3">
-              <div class="card">
+              <div class="card my-3">
               <img class="card-img-top" src="${
       this.imgUrl
       }" alt="Card image cap">
