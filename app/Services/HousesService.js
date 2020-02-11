@@ -1,66 +1,66 @@
 import store from "../store.js";
-import Car from "../Models/Car.js";
+import House from "../Models/House.js";
 
 // @ts-ignore
 let _api = axios.create({
-  baseURL: "//bcw-sandbox.herokuapp.com/api/cars",
+  baseURL: "//bcw-sandbox.herokuapp.com/api/houses",
   timeout: 3000
 });
 
-class CarsService {
-  getCars() {
+class HousesService {
+  getHouses() {
     _api
       .get("")
       .then(res => {
-        let apiCars = res.data.data.map(c => new Car(c));
-        store.commit("cars", apiCars);
+        let apiHouses = res.data.data.map(c => new House(c));
+        store.commit("cars", apiHouses);
       })
       .catch(error => {
         console.error(error);
       });
   }
 
-  getCarById(id) {
+  getHouseById(id) {
     _api.get(id);
   }
 
-  addCar(newCar) {
+  addHouse(newHouse) {
     _api
-      .post("", newCar)
+      .post("", newHouse)
       .then(res => {
-        let newApiCar = new Car(res.data.data);
+        let newApiHouse = new House(res.data.data);
         //NOTE Gets cars from the state and adds additional car into new array
-        let cars = [...store.State.cars, newApiCar];
-        store.commit("cars", cars);
+        let houses = [...store.State.houses, newApiHouse];
+        store.commit("houses", houses);
       })
       .catch(error => {
         console.error(error);
       });
   }
 
-  editCar(id, update) {
+  editHouse(id, update) {
     _api
       .put(id, update)
       .then(res => {
-        let car = store.State.cars.find(c => c._id == id);
+        let house = store.State.houses.find(h => h._id == id);
         //NOTE both these methods apply the changes to the original object
-        //car = { ...car, ...update };
+        //house = { ...house, ...update };
         for (let prop in update) {
-          car[prop] = update[prop];
+          house[prop] = update[prop];
         }
-        store.commit("cars", store.State.cars);
+        store.commit("houses", store.State.houses);
       })
       .catch(error => {
         console.error(error);
       });
   }
 
-  deleteCar(id) {
+  deleteHouse(id) {
     _api
       .delete(id)
       .then(() => {
-        let filteredCars = store.State.cars.filter(c => c._id != id);
-        store.commit("cars", filteredCars);
+        let filteredHouses = store.State.houses.filter(h => h._id != id);
+        store.commit("houses", filteredHouses);
       })
       .catch(error => {
         console.error(error);
@@ -68,7 +68,7 @@ class CarsService {
   }
 }
 
-const service = new CarsService();
+const service = new HousesService();
 export default service;
 
 //GETALL
