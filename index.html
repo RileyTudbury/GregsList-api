@@ -17,7 +17,7 @@
     <div class="row">
       <div class="col-12">
 
-        <div class="tab">
+        <div class="tab sticky-top">
           <button class="tablinks" onclick="app.openCategory(event, 'cars')">See Cars</button>
           <button class="tablinks" onclick="app.openCategory(event, 'houses')">See Houses</button>
         </div>
@@ -35,7 +35,7 @@
         <!-- Button trigger modal -->
 
 
-        <!-- Modal -->
+        <!-- Car Modal -->
         <div class="modal fade" id="car-form" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
           aria-hidden="true">
           <div class="modal-dialog" role="document">
@@ -74,6 +74,62 @@
                   <div class="form-group">
                     <label for="imgUrl">Image</label>
                     <input type="text" name="imgUrl" class="form-control" placeholder="Enter a imgUrl here..." />
+                  </div>
+                  <button type="submit" class="btn btn-primary">Save</button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- House Modal -->
+        <div class="modal fade" id="house-form" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Add a House</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form onsubmit="app.housesController.addHouse(event)">
+                  <div class="form-group">
+                    <label for="bedrooms">How many bedrooms</label>
+                    <input type="text" name="bedrooms" class="form-control" placeholder="Enter an amount here..."
+                      required />
+                  </div>
+                  <div class="form-group">
+                    <label for="bathrooms">Bathrooms</label>
+                    <input type="text" name="bathrooms" class="form-control" placeholder="Enter an amount here..." />
+                  </div>
+                  <div class="form-group">
+                    <label for="imgUrl">Image</label>
+                    <input type="text" name="imgUrl" class="form-control" placeholder="Enter an image link here..." />
+                  </div>
+                  <div class="form-group">
+                    <label for="levels">Levels</label>
+                    <input type="text" name="levels" class="form-control" placeholder="Enter an amount here..." />
+                  </div>
+                  <div class="form-group">
+                    <label for="year">Year</label>
+                    <input type="number" min="1900" max="2020" name="year" class="form-control"
+                      placeholder="Enter a year here..." />
+                  </div>
+                  <div class="form-group">
+                    <label for="price">Price</label>
+                    <input type="number" name="price" class="form-control" min="0"
+                      placeholder="Enter a price here..." />
+                  </div>
+                  <div class="form-group">
+                    <label for="description">Description</label>
+                    <input type="text" name="description" class="form-control"
+                      placeholder="Enter a description here..." />
                   </div>
                   <button type="submit" class="btn btn-primary">Save</button>
                 </form>

@@ -5,7 +5,9 @@ import store from "../store.js";
 function _draw() {
   let houses = store.State.houses;
   let housesElem = document.getElementById("houses");
-  let template = "";
+  let template = `<div class="col-12"><button type="button" class="py-3 btn btn-secondary btn-block" data-toggle="modal" data-target="#house-form">
+  Add House
+</button></div>`;
 
   houses.forEach(house => {
     template += house.Template;
@@ -28,13 +30,12 @@ export default class HousesController {
 
   addHouse(event) {
     event.preventDefault();
-
+    debugger
     // NOTE formData is an alias for our submitted form from our html
     let formData = event.target;
     // NOTE newcar is an object with all the inputted values from our form
     let newHouse = {
 
-      _id: formData._id.value,
       bedrooms: formData.bedrooms.value,
       bathrooms: formData.bathrooms.value,
       imgUrl: formData.imgUrl.value,
@@ -48,7 +49,7 @@ export default class HousesController {
     HousesService.addHouse(newHouse);
     formData.reset();
     // @ts-ignore
-    $("#car-form").modal("toggle");
+    $("#house-form").modal("toggle");
   }
   removeImg(id) {
     debugger;
