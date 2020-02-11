@@ -29,7 +29,7 @@ class HousesService {
       .post("", newHouse)
       .then(res => {
         let newApiHouse = new House(res.data.data);
-        //NOTE Gets cars from the state and adds additional car into new array
+        //NOTE Gets houses from the state and adds additional house into new array
         let houses = [...store.State.houses, newApiHouse];
         store.commit("houses", houses);
       })

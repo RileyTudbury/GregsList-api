@@ -18,7 +18,8 @@ function _draw() {
 export default class HousesController {
   constructor() {
     store.subscribe("houses", _draw);
-    this.getAllHouses();
+    // this.getAllHouses();
+    console.log(store.State.houses)
   }
 
   getAllHouses() {

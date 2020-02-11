@@ -58,7 +58,6 @@ class Store {
     _validateProp(prop);
     _validateSubscriber(fn, prop);
     _listeners[prop].push(fn);
-    debugger;
   }
 
   /**
