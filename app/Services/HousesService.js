@@ -3,7 +3,7 @@ import House from "../Models/House.js";
 
 // @ts-ignore
 let _api = axios.create({
-  baseURL: "//bcw-sandbox.herokuapp.com/api/houses",
+  baseURL: "http://bcw-sandbox.herokuapp.com/api/houses",
   timeout: 3000
 });
 
@@ -12,7 +12,7 @@ class HousesService {
     _api
       .get("")
       .then(res => {
-        let apiHouses = res.data.data.map(c => new House(c));
+        let apiHouses = res.data.map(c => new House(c));
         store.commit("houses", apiHouses);
       })
       .catch(error => {

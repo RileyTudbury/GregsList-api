@@ -3,7 +3,7 @@ import Car from "../Models/Car.js";
 
 // @ts-ignore
 let _api = axios.create({
-  baseURL: "//bcw-sandbox.herokuapp.com/api/cars",
+  baseURL: "http://bcw-sandbox.herokuapp.com/api/cars",
   timeout: 3000
 });
 
@@ -12,7 +12,7 @@ class CarsService {
     _api
       .get("")
       .then(res => {
-        let apiCars = res.data.data.map(c => new Car(c));
+        let apiCars = res.data.map(c => new Car(c));
         store.commit("cars", apiCars);
       })
       .catch(error => {

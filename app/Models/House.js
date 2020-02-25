@@ -14,7 +14,7 @@ export default class House {
   get Template() {
 
     return `
-              <div class="col-3">
+              <div class="col-12 col-md-3">
               <div class="card my-3">
               <img class="card-img-top" src="${
       this.imgUrl
