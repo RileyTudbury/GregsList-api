@@ -12,7 +12,7 @@ class CarsService {
     _api
       .get("")
       .then(res => {
-        let apiCars = res.data.map(c => new Car(c));
+        let apiCars = res.data.data.map(c => new Car(c));
         store.commit("cars", apiCars);
       })
       .catch(error => {

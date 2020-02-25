@@ -12,7 +12,7 @@ class HousesService {
     _api
       .get("")
       .then(res => {
-        let apiHouses = res.data.map(c => new House(c));
+        let apiHouses = res.data.data.map(c => new House(c));
         store.commit("houses", apiHouses);
       })
       .catch(error => {
